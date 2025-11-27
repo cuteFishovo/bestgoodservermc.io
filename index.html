@@ -1,38 +1,155 @@
-请用浏览器打开此网站
-
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <!-- 关键跳转代码：0秒后自动跳转到目标网址 -->
-    <meta http-equiv="refresh" content="0; url=https://frp-arm.com:36983/">
-    <title>跳转中...</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
-            background-color: #f0f0f0;
-        }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        a {
-            color: #0066cc;
-            text-decoration: none;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>游戏服务器连接提示</title>
+  <!-- 引入Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- 引入Font Awesome图标 -->
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  
+  <!-- 自定义配置 -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#165DFF',
+            secondary: '#36CFFB',
+            dark: '#0F172A',
+            darker: '#0A0F1F',
+            accent: '#7B61FF',
+          },
+          fontFamily: {
+            inter: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      }
+    }
+  </script>
+  
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .text-shadow {
+        text-shadow: 0 0 10px rgba(22, 93, 255, 0.5);
+      }
+      .glow {
+        box-shadow: 0 0 15px rgba(22, 93, 255, 0.4);
+      }
+      .bg-grid {
+        background-image: 
+          linear-gradient(rgba(22, 93, 255, 0.1) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(22, 93, 255, 0.1) 1px, transparent 1px);
+        background-size: 20px 20px;
+      }
+    }
+  </style>
 </head>
-<body>
-    <div class="container">
-        <h1>正在跳转到 世界上最好玩的我的世界服务器[bushi]游戏ip...</h1>
-        <p>如果页面没有自动跳转，请 <a href="https://frp-arm.com:36983/">点击此处</a>。</p>
-        <p>请用浏览器打开此网站
+<body class="font-inter bg-darker text-white min-h-screen flex flex-col items-center justify-center p-4 bg-grid relative overflow-hidden">
+  <!-- 背景装饰 -->
+  <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20 pointer-events-none">
+    <div class="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-primary/30 blur-3xl"></div>
+    <div class="absolute bottom-20 -left-20 w-96 h-96 rounded-full bg-accent/20 blur-3xl"></div>
+  </div>
+
+  <!-- 主容器 -->
+  <div class="max-w-md w-full bg-dark/80 backdrop-blur-md rounded-2xl p-8 border border-primary/30 glow relative z-10 transform transition-all duration-500 hover:scale-[1.02]">
+    <!-- 标题区域 -->
+    <div class="text-center mb-8">
+      <div class="inline-block p-3 bg-primary/20 rounded-full mb-4">
+        <i class="fa fa-gamepad text-4xl text-primary"></i>
+      </div>
+      <h1 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-white text-shadow mb-2">连接提示</h1>
+      <p class="text-gray-300 text-lg">您输入的是游戏连接IP，并非网站</p>
     </div>
+
+    <!-- 信息卡片 -->
+    <div class="space-y-6">
+      <!-- Q群信息 -->
+      <div class="bg-dark/60 p-5 rounded-xl border border-primary/20 flex items-center transition-all duration-300 hover:border-primary/50">
+        <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mr-4 flex-shrink-0">
+          <i class="fa fa-qq text-2xl text-primary"></i>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-1">加入我们的Q群</h3>
+          <div class="flex items-center">
+            <span class="text-xl font-mono font-bold text-secondary mr-3">970547713</span>
+            <button onclick="copyToClipboard('970547713')" class="text-gray-400 hover:text-primary transition-colors">
+              <i class="fa fa-copy"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 官网信息 -->
+      <div class="bg-dark/60 p-5 rounded-xl border border-primary/20 flex items-center transition-all duration-300 hover:border-primary/50">
+        <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mr-4 flex-shrink-0">
+          <i class="fa fa-globe text-2xl text-primary"></i>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-1">官方网站</h3>
+          <div class="flex items-center">
+            <a href="https://bgsmc.top" target="_blank" class="text-xl font-mono font-bold text-secondary hover:text-primary transition-colors mr-3">bgsmc.top</a>
+            <button onclick="copyToClipboard('https://bgsmc.top')" class="text-gray-400 hover:text-primary transition-colors">
+              <i class="fa fa-copy"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 邮箱信息 -->
+      <div class="bg-dark/60 p-5 rounded-xl border border-primary/20 flex items-center transition-all duration-300 hover:border-primary/50">
+        <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mr-4 flex-shrink-0">
+          <i class="fa fa-envelope text-2xl text-primary"></i>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-1">联系邮箱</h3>
+          <div class="flex items-center">
+            <a href="mailto:email@bestgoodservermc.top" class="text-lg font-mono font-bold text-secondary hover:text-primary transition-colors mr-3">email@bestgoodservermc.top</a>
+            <button onclick="copyToClipboard('email@bestgoodservermc.top')" class="text-gray-400 hover:text-primary transition-colors">
+              <i class="fa fa-copy"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 底部提示 -->
+    <div class="mt-8 text-center text-gray-400 text-sm">
+      <p>点击链接可直接访问，点击复制图标可复制对应信息</p>
+    </div>
+  </div>
+
+  <!-- 复制成功提示 -->
+  <div id="copyToast" class="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-primary text-white px-4 py-2 rounded-lg shadow-lg opacity-0 transition-opacity duration-300 pointer-events-none">
+    <i class="fa fa-check mr-2"></i>复制成功！
+  </div>
+
+  <script>
+    // 复制到剪贴板功能
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        const toast = document.getElementById('copyToast');
+        toast.classList.remove('opacity-0');
+        toast.classList.add('opacity-100');
+        
+        setTimeout(() => {
+          toast.classList.remove('opacity-100');
+          toast.classList.add('opacity-0');
+        }, 2000);
+      });
+    }
+
+    // 平滑滚动效果
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
 </body>
 </html>
